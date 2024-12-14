@@ -1,0 +1,78 @@
+[
+    {
+      "model": "discoteca.discoteca",
+      "pk": 1,
+      "fields": {
+        "nombre": "Discoteca 1",
+        "direccion": "Av. Principal 123",
+        "capacidad": 200,
+        "horario_apertura": "21:00:00",
+        "horario_cierre": "03:00:00",
+        "telefono": "123-456-7890",
+        "email": "info@discoteca1.com",
+        "descripcion": "Una descripción de la discoteca 1.",
+        "es_activo": true
+      }
+    },
+    {
+      "model": "discoteca.discoteca",
+      "pk": 2,
+      "fields": {
+        "nombre": "Discoteca 2",
+        "direccion": "Calle Secundaria 456",
+        "capacidad": 300,
+        "horario_apertura": "22:00:00",
+        "horario_cierre": "04:00:00",
+        "telefono": "098-765-4321",
+        "email": "info@discoteca2.com",
+        "descripcion": "Una descripción de la discoteca 2.",
+        "es_activo": true
+      }
+    },
+    {
+      "model": "discoteca.discoteca",
+      "pk": 3,
+      "fields": {
+        "nombre": "Casona",
+        "direccion": "Calle Tradicional 789",
+        "capacidad": 250,
+        "horario_apertura": "20:00:00",
+        "horario_cierre": "02:00:00",
+        "telefono": "111-222-3333",
+        "email": "info@casona.com",
+        "descripcion": "La mejor música y ambiente en Casona.",
+        "es_activo": true
+      }
+    },
+    {
+      "model": "discoteca.discoteca",
+      "pk": 4,
+      "fields": {
+        "nombre": "DejaVu",
+        "direccion": "Boulevard de la Fiesta 101",
+        "capacidad": 400,
+        "horario_apertura": "22:00:00",
+        "horario_cierre": "05:00:00",
+        "telefono": "444-555-6666",
+        "email": "info@dejavu.com",
+        "descripcion": "DejaVu, donde la fiesta nunca termina.",
+        "es_activo": true
+      }
+    },
+    {
+      "model": "discoteca.discoteca",
+      "pk": 5,
+      "fields": {
+        "nombre": "Náutica",
+        "direccion": "Plaza del Mar 202",
+        "capacidad": 350,
+        "horario_apertura": "21:30:00",
+        "horario_cierre": "04:30:00",
+        "telefono": "777-888-9999",
+        "email": "info@nautica.com",
+        "descripcion": "Náutica, la mejor vista y la mejor música.",
+        "es_activo": true
+      }
+    }
+  ]
+  

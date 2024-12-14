@@ -1,0 +1,17 @@
+<div>
+    <ul>
+      <li *ngFor="let discoteca of discotecas" (click)="toggleDetails(discoteca)">
+        <strong>{{ discoteca.nombre }}</strong>: {{ discoteca.direccion }}
+        <div *ngIf="selectedDiscoteca === discoteca">
+          <p><strong>Capacidad:</strong> {{ discoteca.capacidad }}</p>
+          <p><strong>Horario de Apertura:</strong> {{ discoteca.horario_apertura }}</p>
+          <p><strong>Horario de Cierre:</strong> {{ discoteca.horario_cierre }}</p>
+          <p><strong>Teléfono:</strong> {{ discoteca.telefono }}</p>
+          <p><strong>Email:</strong> {{ discoteca.email }}</p>
+          <p><strong>Descripción:</strong> {{ discoteca.descripcion }}</p>
+          <p><strong>Estado:</strong> {{ discoteca.es_activo ? 'Activo' : 'Inactivo' }}</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+  
