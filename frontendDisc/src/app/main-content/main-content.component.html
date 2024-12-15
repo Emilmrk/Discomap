@@ -1,0 +1,10 @@
+<section>
+    <h1>Bienvenido{{ usernameMessage }}</h1>
+    <div *ngIf="isAuthenticated$ | async">
+      <p>Aquí están tus favoritos y otros datos personales.</p>
+    </div>
+    <div *ngIf="!(isAuthenticated$ | async)">
+      <p>Por favor, inicia sesión o regístrate para ver tus datos personales.</p>
+    </div>
+  </section>
+  

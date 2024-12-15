@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-lista-discotecas',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule], // Eliminar HeaderComponent de las importaciones
   templateUrl: './lista-discotecas.component.html',
   styleUrls: ['./lista-discotecas.component.css'],
 })
@@ -18,13 +18,13 @@ export class ListaDiscotecasComponent implements OnInit {
   constructor(private discotecaService: DiscotecaService, private searchService: SearchService) {}
 
   ngOnInit() {
-    this.discotecaService.getDiscotecas().subscribe(
-      (data) => {
+    this.discotecaService.getDiscotecas().then(
+      (data: any) => {
         this.discotecas = data as any[];
         this.filteredDiscotecas = this.discotecas; // Mostrar todas las discotecas inicialmente
         console.log(this.discotecas);
       },
-      (error) => {
+      (error: any) => {
         console.error('Error al obtener discotecas:', error);
       }
     );

@@ -1,12 +1,17 @@
 <header>
-    <nav>
-      <ul>
-        <li><a routerLink="/">Inicio</a></li>
-        <li><a routerLink="/objetivo">Objetivo</a></li>
-        <li><a routerLink="/contactos">Contactos</a></li>
-        <li style="margin-left: auto;"><a routerLink="/login">Iniciar Sesión</a></li>
-      </ul>
-      <input type="text" placeholder="Buscar discoteca..." (input)="onSearch($event)" /> <!-- Barra de búsqueda -->
-    </nav>
-  </header>
-  
+  <nav>
+    <ul>
+      <li><a routerLink="/">Inicio</a></li>
+      <li><a routerLink="/objetivo">Objetivo</a></li>
+      <li><a routerLink="/contactos">Contactos</a></li>
+      <li><a routerLink="/discotecas">Lista de Discotecas</a></li>
+      <li style="margin-left: auto;">
+        <a *ngIf="!(isAuthenticated$ | async)" routerLink="/login">Iniciar Sesión</a>
+        <a *ngIf="!(isAuthenticated$ | async)" routerLink="/register">Registrar</a>
+        <a *ngIf="isAuthenticated$ | async" (click)="logout()">Cerrar Sesión</a>
+      </li>
+    </ul>
+    <input type="text" placeholder="Buscar discoteca..." (input)="onSearch($event)" /> <!-- Barra de búsqueda -->
+  </nav>
+  <p *ngIf="isAuthenticated$ | async">Bienvenido, {{ username }}</p> <!-- Cambiar isAuthenticated a isAuthenticated$ -->
+</header>

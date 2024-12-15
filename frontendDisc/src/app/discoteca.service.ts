@@ -1,17 +1,42 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { firstValueFrom } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DiscotecaService {
-
-  private apiUrl = 'http://localhost:8000/api/discotecas/';  // Cambia esta URL a la de tu API de Django
+  private discotecasUrl = 'http://localhost:8000/api/discotecas/'; // URL del endpoint de discotecas en Django
 
   constructor(private http: HttpClient) { }
 
-  getDiscotecas(): Observable<any> {
-    return this.http.get<any>(this.apiUrl);
+  getDiscotecas(): Promise<any> {
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders().set('Authorization', `Token ${token}`);
+    return firstValueFrom(this.http.get<any>(this.discotecasUrl, { headers }));
+  }
+
+  getDiscoteca(id: number): Promise<any> {
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders().set('Authorization', `Token ${token}`);
+    return firstValueFrom(this.http.get<any>(`${this.discotecasUrl}${id}/`, { headers }));
+  }
+
+  createDiscoteca(discoteca: any): Promise<any> {
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders().set('Authorization', `Token ${token}`);
+    return firstValueFrom(this.http.post<any>(this.discotecasUrl, discoteca, { headers }));
+  }
+
+  updateDiscoteca(id: number, discoteca: any): Promise<any> {
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders().set('Authorization', `Token ${token}`);
+    return firstValueFrom(this.http.put<any>(`${this.discotecasUrl}${id}/`, discoteca, { headers }));
+  }
+
+  deleteDiscoteca(id: number): Promise<any> {
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders().set('Authorization', `Token ${token}`);
+    return firstValueFrom(this.http.delete<any>(`${this.discotecasUrl}${id}/`, { headers }));
   }
 }

@@ -1,0 +1,10 @@
+<nav>
+    <a routerLink="/">Inicio</a>
+    <a *ngIf="!isAuthenticated" routerLink="/login">Iniciar Sesión</a>
+    <a *ngIf="!isAuthenticated" routerLink="/register">Registrar</a>
+    <a *ngIf="isAuthenticated" routerLink="/discotecas">Lista de Discotecas</a>
+    <a *ngIf="isAuthenticated" (click)="logout()">Cerrar Sesión</a>
+  </nav>
+  
+  <p *ngIf="isAuthenticated">Bienvenido, {{ username }}</p>
+  
