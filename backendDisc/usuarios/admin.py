@@ -1,8 +1,14 @@
 from django.contrib import admin
-from django.contrib.auth.admin import UserAdmin
-from .models import CustomUser  # Importa tu modelo personalizado
+from .models import Favorito, Reciente, Perfil
 
-@admin.register(CustomUser)
-class CustomUserAdmin(UserAdmin):
-    # Puedes personalizar la configuración del admin aquí si es necesario
-    list_display = ('username', 'email', 'first_name', 'last_name', 'is_staff')
+@admin.register(Favorito)
+class FavoritoAdmin(admin.ModelAdmin):
+    list_display = ('usuario', 'discoteca')
+
+@admin.register(Reciente)
+class RecienteAdmin(admin.ModelAdmin):
+    list_display = ('usuario', 'discoteca', 'visto_en')
+
+@admin.register(Perfil)
+class PerfilAdmin(admin.ModelAdmin):
+    list_display = ('usuario', 'avatar', 'biografia')

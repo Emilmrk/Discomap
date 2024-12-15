@@ -59,7 +59,6 @@ MIDDLEWARE = [
 
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOWED_ORIGINS = [ "http://localhost:3000", "http://localhost:4200", ]
-AUTH_USER_MODEL = 'usuarios.CustomUser'
 
 ROOT_URLCONF = 'backendDisc.urls'
 
